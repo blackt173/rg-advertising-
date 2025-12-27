@@ -5,32 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio | RG Advertising LLC</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
     <meta name="description" content="See our advertising portfolio and case studies from RG Advertising LLC.">
     <style>
-        /* Copy all CSS styles from index.html */
-        /* Then add: */
-        .page-hero {
-            background: linear-gradient(rgba(26, 54, 93, 0.9), rgba(26, 54, 93, 0.9)), url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            padding: 140px 0 80px;
-            text-align: center;
-            margin-top: 80px;
-        }
-
-        .page-hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
-        }
-
-        .page-hero p {
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin: 0 auto;
-            opacity: 0.9;
-        }
-
+        /* Additional styles specific to portfolio page */
         .portfolio-filter {
             display: flex;
             justify-content: center;
@@ -46,6 +24,7 @@
             border-radius: 4px;
             cursor: pointer;
             transition: all 0.3s;
+            font-weight: 600;
         }
 
         .filter-btn.active,
@@ -65,16 +44,17 @@
             border-radius: 8px;
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-            transition: transform 0.3s;
+            transition: transform 0.3s ease;
         }
 
         .portfolio-item:hover {
             transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
         }
 
         .portfolio-image {
             height: 250px;
-            background: var(--primary);
+            background: linear-gradient(135deg, var(--primary) 0%, #0d1b2a 100%);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -89,6 +69,7 @@
         .portfolio-content h3 {
             color: var(--primary);
             margin-bottom: 10px;
+            font-size: 1.5rem;
         }
 
         .portfolio-category {
@@ -99,6 +80,7 @@
             font-size: 0.9rem;
             display: inline-block;
             margin-bottom: 15px;
+            font-weight: 600;
         }
 
         .portfolio-stats {
@@ -111,6 +93,7 @@
 
         .stat {
             text-align: center;
+            flex: 1;
         }
 
         .stat-value {
@@ -118,6 +101,11 @@
             font-size: 1.5rem;
             font-weight: bold;
             margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--gray);
         }
 
         .case-study {
@@ -131,6 +119,7 @@
         .case-study h3 {
             color: var(--primary);
             margin-bottom: 20px;
+            text-align: center;
         }
 
         .case-study-grid {
@@ -146,10 +135,74 @@
             border-radius: 6px;
             border-left: 4px solid var(--accent);
         }
+
+        .case-study-item h4 {
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .testimonial-quote {
+            font-style: italic;
+            color: var(--dark);
+            padding: 20px;
+            background: #f0f8ff;
+            border-radius: 8px;
+            margin: 20px 0;
+            position: relative;
+        }
+
+        .testimonial-quote:before {
+            content: '"';
+            font-size: 4rem;
+            color: var(--accent);
+            position: absolute;
+            top: -10px;
+            left: 10px;
+            opacity: 0.3;
+        }
+
+        .client-logos {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin: 50px 0;
+            padding: 30px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .client-logo {
+            font-size: 2.5rem;
+            color: var(--primary);
+            opacity: 0.7;
+            transition: all 0.3s;
+        }
+
+        .client-logo:hover {
+            opacity: 1;
+            transform: translateY(-5px);
+        }
+
+        .industry-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .industry-tag {
+            background: #e9ecef;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: var(--gray);
+        }
     </style>
 </head>
 <body>
-    <!-- Header (Same as index.html) -->
+    <!-- Header -->
     <header>
         <div class="container header-container">
             <div class="logo">
@@ -185,7 +238,7 @@
     </header>
 
     <!-- Page Hero -->
-    <section class="page-hero">
+    <section class="page-hero" style="background: linear-gradient(rgba(26, 54, 93, 0.9), rgba(26, 54, 93, 0.9)), url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');">
         <div class="container">
             <h1>Our Portfolio</h1>
             <p>See our successful advertising campaigns and case studies from various industries.</p>
@@ -202,93 +255,138 @@
                 <button class="filter-btn" data-filter="social">Social Media</button>
                 <button class="filter-btn" data-filter="traditional">Traditional Media</button>
                 <button class="filter-btn" data-filter="branding">Branding</button>
+                <button class="filter-btn" data-filter="video">Video Marketing</button>
             </div>
 
             <!-- Portfolio Grid -->
             <div class="portfolio-grid">
                 <!-- Project 1 -->
-                <div class="portfolio-item" data-category="digital">
+                <div class="portfolio-item" data-category="digital social">
                     <div class="portfolio-image">
                         <i class="fas fa-shopping-cart"></i>
                     </div>
                     <div class="portfolio-content">
-                        <span class="portfolio-category">Digital Advertising</span>
+                        <span class="portfolio-category">Digital & Social Media</span>
                         <h3>E-Commerce Brand Launch</h3>
-                        <p>Comprehensive digital campaign for a new e-commerce brand, resulting in 300% ROI in first quarter.</p>
+                        <p>Comprehensive digital campaign for a new e-commerce fashion brand, resulting in 300% ROI in first quarter and establishing strong online presence.</p>
+                        
+                        <div class="industry-tags">
+                            <span class="industry-tag">Fashion</span>
+                            <span class="industry-tag">E-commerce</span>
+                            <span class="industry-tag">Retail</span>
+                        </div>
+                        
                         <div class="portfolio-stats">
                             <div class="stat">
                                 <div class="stat-value">300%</div>
-                                <div>ROI Increase</div>
+                                <div class="stat-label">ROI Increase</div>
                             </div>
                             <div class="stat">
                                 <div class="stat-value">45%</div>
-                                <div>Sales Growth</div>
+                                <div class="stat-label">Sales Growth</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-value">25K</div>
+                                <div class="stat-label">New Followers</div>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Project 2 -->
-                <div class="portfolio-item" data-category="social">
+                <div class="portfolio-item" data-category="social video">
                     <div class="portfolio-image">
                         <i class="fas fa-mobile-alt"></i>
                     </div>
                     <div class="portfolio-content">
-                        <span class="portfolio-category">Social Media</span>
+                        <span class="portfolio-category">Social Media & Video</span>
                         <h3>TikTok Brand Awareness Campaign</h3>
-                        <p>Viral TikTok campaign generating 2M+ views and 50K+ new followers for a fashion brand.</p>
+                        <p>Viral TikTok campaign generating 2M+ views and 50K+ new followers for a beauty brand through influencer partnerships and trending content.</p>
+                        
+                        <div class="industry-tags">
+                            <span class="industry-tag">Beauty</span>
+                            <span class="industry-tag">Cosmetics</span>
+                            <span class="industry-tag">Influencer Marketing</span>
+                        </div>
+                        
                         <div class="portfolio-stats">
                             <div class="stat">
                                 <div class="stat-value">2M+</div>
-                                <div>Total Views</div>
+                                <div class="stat-label">Total Views</div>
                             </div>
                             <div class="stat">
                                 <div class="stat-value">50K+</div>
-                                <div>New Followers</div>
+                                <div class="stat-label">New Followers</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-value">400%</div>
+                                <div class="stat-label">Engagement Rate</div>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Project 3 -->
-                <div class="portfolio-item" data-category="traditional">
+                <div class="portfolio-item" data-category="traditional branding">
                     <div class="portfolio-image">
                         <i class="fas fa-store"></i>
                     </div>
                     <div class="portfolio-content">
-                        <span class="portfolio-category">Traditional Media</span>
+                        <span class="portfolio-category">Traditional Media & Branding</span>
                         <h3>Local Retail Chain Expansion</h3>
-                        <p>Integrated traditional media campaign for retail chain expansion across California.</p>
+                        <p>Integrated traditional media campaign for retail chain expansion across California markets, combining TV, radio, and outdoor advertising.</p>
+                        
+                        <div class="industry-tags">
+                            <span class="industry-tag">Retail</span>
+                            <span class="industry-tag">Chain Stores</span>
+                            <span class="industry-tag">Local Business</span>
+                        </div>
+                        
                         <div class="portfolio-stats">
                             <div class="stat">
                                 <div class="stat-value">60%</div>
-                                <div>Brand Awareness</div>
+                                <div class="stat-label">Brand Awareness</div>
                             </div>
                             <div class="stat">
                                 <div class="stat-value">25%</div>
-                                <div>Foot Traffic</div>
+                                <div class="stat-label">Foot Traffic</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-value">35%</div>
+                                <div class="stat-label">Sales Lift</div>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Project 4 -->
-                <div class="portfolio-item" data-category="branding">
+                <div class="portfolio-item" data-category="branding digital">
                     <div class="portfolio-image">
                         <i class="fas fa-heartbeat"></i>
                     </div>
                     <div class="portfolio-content">
-                        <span class="portfolio-category">Branding</span>
+                        <span class="portfolio-category">Branding & Digital</span>
                         <h3>Healthcare Brand Refresh</h3>
-                        <p>Complete brand identity overhaul for healthcare provider, increasing patient trust and engagement.</p>
+                        <p>Complete brand identity overhaul for healthcare provider, increasing patient trust and engagement through modern design and digital presence.</p>
+                        
+                        <div class="industry-tags">
+                            <span class="industry-tag">Healthcare</span>
+                            <span class="industry-tag">Medical</span>
+                            <span class="industry-tag">Professional Services</span>
+                        </div>
+                        
                         <div class="portfolio-stats">
                             <div class="stat">
                                 <div class="stat-value">40%</div>
-                                <div>Trust Increase</div>
+                                <div class="stat-label">Trust Increase</div>
                             </div>
                             <div class="stat">
                                 <div class="stat-value">35%</div>
-                                <div>Patient Growth</div>
+                                <div class="stat-label">Patient Growth</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-value">200%</div>
+                                <div class="stat-label">Online Appointments</div>
                             </div>
                         </div>
                     </div>
@@ -302,60 +400,124 @@
                     <div class="portfolio-content">
                         <span class="portfolio-category">Digital Advertising</span>
                         <h3>B2B SaaS Lead Generation</h3>
-                        <p>Targeted LinkedIn and Google Ads campaign for SaaS company, generating 500+ qualified leads.</p>
+                        <p>Targeted LinkedIn and Google Ads campaign for SaaS company, generating 500+ qualified leads and establishing thought leadership in the industry.</p>
+                        
+                        <div class="industry-tags">
+                            <span class="industry-tag">Technology</span>
+                            <span class="industry-tag">SaaS</span>
+                            <span class="industry-tag">B2B</span>
+                        </div>
+                        
                         <div class="portfolio-stats">
                             <div class="stat">
                                 <div class="stat-value">500+</div>
-                                <div>Qualified Leads</div>
+                                <div class="stat-label">Qualified Leads</div>
                             </div>
                             <div class="stat">
                                 <div class="stat-value">200%</div>
-                                <div>ROAS</div>
+                                <div class="stat-label">ROAS</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-value">65%</div>
+                                <div class="stat-label">Cost Reduction</div>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Project 6 -->
-                <div class="portfolio-item" data-category="social">
+                <div class="portfolio-item" data-category="social video">
                     <div class="portfolio-image">
                         <i class="fas fa-utensils"></i>
                     </div>
                     <div class="portfolio-content">
-                        <span class="portfolio-category">Social Media</span>
+                        <span class="portfolio-category">Social Media & Video</span>
                         <h3>Restaurant Social Media Strategy</h3>
-                        <p>Instagram and Facebook strategy for restaurant chain, increasing reservations by 75%.</p>
+                        <p>Instagram and Facebook strategy for restaurant chain, increasing reservations by 75% through food photography, video content, and influencer reviews.</p>
+                        
+                        <div class="industry-tags">
+                            <span class="industry-tag">Food & Beverage</span>
+                            <span class="industry-tag">Restaurant</span>
+                            <span class="industry-tag">Hospitality</span>
+                        </div>
+                        
                         <div class="portfolio-stats">
                             <div class="stat">
                                 <div class="stat-value">75%</div>
-                                <div>Reservation Increase</div>
+                                <div class="stat-label">Reservation Increase</div>
                             </div>
                             <div class="stat">
                                 <div class="stat-value">3x</div>
-                                <div>Social Engagement</div>
+                                <div class="stat-label">Social Engagement</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-value">40%</div>
+                                <div class="stat-label">Repeat Customers</div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Case Studies -->
+            <!-- Client Logos -->
+            <div class="client-logos">
+                <div class="client-logo">
+                    <i class="fas fa-building"></i>
+                </div>
+                <div class="client-logo">
+                    <i class="fas fa-heart"></i>
+                </div>
+                <div class="client-logo">
+                    <i class="fas fa-shopping-bag"></i>
+                </div>
+                <div class="client-logo">
+                    <i class="fas fa-laptop-code"></i>
+                </div>
+                <div class="client-logo">
+                    <i class="fas fa-utensils"></i>
+                </div>
+                <div class="client-logo">
+                    <i class="fas fa-car"></i>
+                </div>
+            </div>
+
+            <!-- Featured Case Study -->
             <div class="case-study">
-                <h3 style="text-align: center;">Featured Case Study: Tech Startup Success Story</h3>
-                <p style="text-align: center; max-width: 800px; margin: 0 auto 30px;">How we helped a tech startup achieve 500% growth in 6 months through strategic advertising.</p>
+                <h3>Featured Case Study: Tech Startup Success Story</h3>
+                <p style="text-align: center; max-width: 800px; margin: 0 auto 30px; color: var(--gray);">How we helped a tech startup achieve 500% growth in 6 months through strategic advertising.</p>
+                
+                <div class="testimonial-quote">
+                    "Working with RG Advertising was the best decision we made for our startup. Their team transformed our marketing strategy and delivered results beyond our expectations. The 500% growth we achieved in just 6 months speaks volumes about their expertise and dedication."
+                    <div style="margin-top: 20px; font-weight: bold; color: var(--primary);">- Michael Rodriguez, CEO of TechInnovate</div>
+                </div>
                 
                 <div class="case-study-grid">
                     <div class="case-study-item">
                         <h4>The Challenge</h4>
-                        <p>New tech startup with limited brand awareness competing against established players in a crowded market.</p>
+                        <p>New tech startup with limited brand awareness competing against established players in a crowded SaaS market. Needed to establish credibility and generate qualified leads quickly.</p>
                     </div>
                     <div class="case-study-item">
                         <h4>Our Strategy</h4>
-                        <p>Multi-channel digital campaign combining social media, content marketing, and targeted advertising.</p>
+                        <p>Multi-channel digital campaign combining content marketing, LinkedIn advertising, SEO optimization, and targeted email campaigns. Focused on establishing thought leadership.</p>
                     </div>
                     <div class="case-study-item">
                         <h4>The Results</h4>
-                        <p>500% user growth, 300% increase in qualified leads, and 200% ROI within first 6 months.</p>
+                        <p>500% user growth, 300% increase in qualified leads, 200% ROI within first 6 months, and establishment as industry thought leader in their niche.</p>
+                    </div>
+                </div>
+                
+                <div class="portfolio-stats" style="max-width: 600px; margin: 40px auto 0;">
+                    <div class="stat">
+                        <div class="stat-value">500%</div>
+                        <div class="stat-label">User Growth</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value">300%</div>
+                        <div class="stat-label">Lead Increase</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value">200%</div>
+                        <div class="stat-label">ROI</div>
                     </div>
                 </div>
             </div>
@@ -365,11 +527,12 @@
                 <h3 style="color: var(--primary); margin-bottom: 20px;">Ready to See Results Like These?</h3>
                 <p style="max-width: 600px; margin: 0 auto 30px;">Contact us to discuss how we can create successful advertising campaigns for your business.</p>
                 <a href="contact.html" class="btn">Start Your Project</a>
+                <a href="services.html" class="btn btn-primary" style="margin-left: 15px;">View Our Services</a>
             </div>
         </div>
     </section>
 
-    <!-- Footer (Same as index.html) -->
+    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-content">
@@ -458,10 +621,20 @@
                 
                 // Filter portfolio items
                 portfolioItems.forEach(item => {
-                    if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                    const categories = item.getAttribute('data-category').split(' ');
+                    
+                    if (filterValue === 'all' || categories.includes(filterValue)) {
                         item.style.display = 'block';
+                        setTimeout(() => {
+                            item.style.opacity = '1';
+                            item.style.transform = 'translateY(0)';
+                        }, 100);
                     } else {
-                        item.style.display = 'none';
+                        item.style.opacity = '0';
+                        item.style.transform = 'translateY(20px)';
+                        setTimeout(() => {
+                            item.style.display = 'none';
+                        }, 300);
                     }
                 });
             });
@@ -474,6 +647,18 @@
             if (copyrightElement) {
                 copyrightElement.innerHTML = `&copy; ${year} RG Advertising LLC. All Rights Reserved. | EIN: 41-3040077`;
             }
+            
+            // Initialize portfolio items with animation
+            portfolioItems.forEach((item, index) => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateY(20px)';
+                item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                
+                setTimeout(() => {
+                    item.style.opacity = '1';
+                    item.style.transform = 'translateY(0)';
+                }, 100 + (index * 100));
+            });
         });
     </script>
 </body>
