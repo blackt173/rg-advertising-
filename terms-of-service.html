@@ -5,35 +5,216 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Terms of Service | RG Advertising LLC</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
     <meta name="description" content="Terms of Service for RG Advertising LLC - Terms governing your use of our website and services.">
     <style>
-        /* Copy all CSS styles from privacy-policy.html */
-        /* Page hero background different for ToS */
-        .page-hero {
-            background: linear-gradient(rgba(26, 54, 93, 0.9), rgba(26, 54, 93, 0.9)), url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            padding: 140px 0 80px;
-            text-align: center;
-            margin-top: 80px;
+        /* Additional styles specific to terms page */
+        .policy-content {
+            background: white;
+            padding: 50px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-top: 30px;
         }
 
-        .page-hero h1 {
-            font-size: 3.5rem;
+        .policy-section {
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid var(--light-gray);
+        }
+
+        .policy-section:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .policy-section h2 {
+            color: var(--primary);
             margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--light-gray);
+            font-size: 2rem;
         }
 
-        .page-hero p {
+        .policy-section h3 {
+            color: var(--primary);
+            margin: 25px 0 15px;
+            font-size: 1.4rem;
+        }
+
+        .policy-section h4 {
+            color: var(--dark);
+            margin: 20px 0 10px;
             font-size: 1.2rem;
-            max-width: 700px;
-            margin: 0 auto;
-            opacity: 0.9;
+        }
+
+        .policy-section p {
+            margin-bottom: 15px;
+            line-height: 1.7;
+            color: var(--dark);
+        }
+
+        .policy-section ul {
+            margin: 15px 0 15px 20px;
+        }
+
+        .policy-section ul li {
+            margin-bottom: 10px;
+            line-height: 1.6;
+            color: var(--dark);
+        }
+
+        .highlight-box {
+            background: #f0f8ff;
+            border-left: 4px solid var(--accent);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .policy-navigation {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            position: sticky;
+            top: 100px;
+            z-index: 100;
+        }
+
+        .policy-navigation h4 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .policy-navigation ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .policy-navigation ul li {
+            margin-bottom: 10px;
+        }
+
+        .policy-navigation ul li a {
+            color: var(--dark);
+            text-decoration: none;
+            transition: color 0.3s;
+            display: block;
+            padding: 5px 0;
+            border-left: 3px solid transparent;
+            padding-left: 10px;
+        }
+
+        .policy-navigation ul li a:hover,
+        .policy-navigation ul li a.active {
+            color: var(--primary);
+            border-left-color: var(--primary);
+        }
+
+        .policy-update {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .info-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        .info-table th {
+            background: var(--light-gray);
+            padding: 12px;
+            text-align: left;
+            font-weight: 600;
+            color: var(--primary);
+            border: 1px solid #dee2e6;
+        }
+
+        .info-table td {
+            padding: 12px;
+            border: 1px solid #dee2e6;
+        }
+
+        .info-table tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        .warning-box {
+            background: #f8d7da;
+            border-left: 4px solid #dc3545;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .service-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        .service-table th {
+            background: var(--primary);
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .service-table td {
+            padding: 15px;
+            border: 1px solid #dee2e6;
+        }
+
+        .service-table tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        .acceptance-box {
+            background: #d4edda;
+            border-left: 4px solid #28a745;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 0 4px 4px 0;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .policy-content {
+                padding: 30px;
+            }
+            
+            .policy-section h2 {
+                font-size: 1.8rem;
+            }
+            
+            .service-table {
+                display: block;
+                overflow-x: auto;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .policy-content {
+                padding: 20px;
+            }
+            
+            .policy-navigation {
+                position: static;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Header (Same as index.html) -->
+    <!-- Header -->
     <header>
         <div class="container header-container">
             <div class="logo">
@@ -69,7 +250,7 @@
     </header>
 
     <!-- Page Hero -->
-    <section class="page-hero">
+    <section class="page-hero" style="background: linear-gradient(rgba(26, 54, 93, 0.9), rgba(26, 54, 93, 0.9)), url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');">
         <div class="container">
             <h1>Terms of Service</h1>
             <p>Terms governing your use of our website and services</p>
@@ -79,12 +260,37 @@
     <!-- Terms of Service Content -->
     <section class="content-section">
         <div class="container">
+            <div class="policy-update">
+                <h4><i class="fas fa-exclamation-circle" style="color: #856404; margin-right: 10px;"></i>Important Legal Notice</h4>
+                <p><strong>Effective Date:</strong> December 11, 2025</p>
+                <p><strong>Last Updated:</strong> December 11, 2025</p>
+                <p>Please read these Terms of Service carefully before using our website or services.</p>
+            </div>
+
             <div class="policy-content">
-                <!-- Overview -->
-                <div class="policy-section">
+                <!-- Policy Navigation -->
+                <div class="policy-navigation">
+                    <h4>Quick Navigation</h4>
+                    <ul>
+                        <li><a href="#overview">1. Agreement Overview</a></li>
+                        <li><a href="#services">2. Services Description</a></li>
+                        <li><a href="#accounts">3. User Accounts</a></li>
+                        <li><a href="#payments">4. Payments & Billing</a></li>
+                        <li><a href="#intellectual">5. Intellectual Property</a></li>
+                        <li><a href="#conduct">6. User Conduct</a></li>
+                        <li><a href="#liability">7. Limitation of Liability</a></li>
+                        <li><a href="#indemnification">8. Indemnification</a></li>
+                        <li><a href="#termination">9. Termination</a></li>
+                        <li><a href="#disputes">10. Dispute Resolution</a></li>
+                        <li><a href="#governing">11. Governing Law</a></li>
+                        <li><a href="#changes">12. Changes to Terms</a></li>
+                        <li><a href="#contact">13. Contact Information</a></li>
+                    </ul>
+                </div>
+
+                <!-- Agreement Overview -->
+                <div class="policy-section" id="overview">
                     <h2>Terms of Service for RG Advertising LLC</h2>
-                    <p><strong>Effective Date:</strong> December 11, 2025</p>
-                    <p><strong>Last Updated:</strong> December 11, 2025</p>
                     
                     <div class="highlight-box">
                         <p><strong>Company Information:</strong><br>
@@ -93,153 +299,306 @@
                         Westlake Village, CA 91361<br>
                         EIN: 41-3040077<br>
                         Phone: (862) 215-9564<br>
-                        Email: legal@rg-advertising.site</p>
-                        <p><strong>Social Media:</strong><br>
-                        TikTok: @rangbunrung3<br>
+                        Email: legal@rg-advertising.site<br>
                         Website: rg-advertising.site</p>
                     </div>
                     
-                    <p>These Terms of Service ("Terms") govern your access to and use of the RG Advertising LLC website (rg-advertising.site) and services. By accessing or using our services, you agree to be bound by these Terms.</p>
+                    <p>These Terms of Service ("Terms," "Agreement") constitute a legally binding agreement made between you, whether personally or on behalf of an entity ("you") and RG Advertising LLC ("we," "us," or "our"), concerning your access to and use of the rg-advertising.site website as well as any other media form, media channel, mobile website or mobile application related, linked, or otherwise connected thereto (collectively, the "Site").</p>
                     
-                    <p>If you disagree with any part of the Terms, then you may not access the website or use our services.</p>
-                </div>
-
-                <!-- Services -->
-                <div class="policy-section">
-                    <h3>1. Services Provided</h3>
-                    <p>RG Advertising LLC provides advertising and marketing services including but not limited to:</p>
+                    <p>By accessing or using the Site and our services, you acknowledge that you have read, understood, and agree to be bound by these Terms. If you do not agree with these Terms, please do not access or use the Site or our services.</p>
+                    
+                    <div class="warning-box">
+                        <p><strong>Important:</strong> These Terms contain important information regarding your legal rights, remedies, and obligations. This includes various limitations and exclusions, and provisions that govern the jurisdiction, venue, and resolution of disputes.</p>
+                    </div>
+                    
+                    <h3>1.1 Eligibility</h3>
+                    <p>You must be at least 18 years of age to use the Site and our services. By using the Site, you represent and warrant that:</p>
                     <ul>
-                        <li>Digital advertising campaigns (social media, search engine marketing, display advertising)</li>
-                        <li>Traditional media advertising (TV, radio, print, outdoor)</li>
-                        <li>Marketing strategy development and consultation</li>
-                        <li>Creative development services (copywriting, design, content creation)</li>
-                        <li>Analytics and performance reporting</li>
-                        <li>Social media management and marketing</li>
-                        <li>Brand development and positioning</li>
+                        <li>You are at least 18 years old</li>
+                        <li>You have the legal capacity to enter into a binding contract</li>
+                        <li>You are not prohibited from using the Site under applicable laws</li>
+                        <li>All information you provide is true, accurate, and complete</li>
                     </ul>
-                    <p>Specific service terms, deliverables, timelines, and pricing will be detailed in separate service agreements or statements of work.</p>
+                    
+                    <h3>1.2 Modifications to Terms</h3>
+                    <p>We reserve the right to modify these Terms at any time. We will notify you of any changes by updating the "Last Updated" date of these Terms. Your continued use of the Site after any such changes constitutes your acceptance of the new Terms.</p>
                 </div>
 
-                <!-- User Responsibilities -->
-                <div class="policy-section">
-                    <h3>2. User Responsibilities</h3>
-                    <p>By using our services, you agree to:</p>
+                <!-- Services Description -->
+                <div class="policy-section" id="services">
+                    <h3>2. Services Description</h3>
+                    
+                    <p>RG Advertising LLC provides professional advertising and marketing services including but not limited to:</p>
+                    
+                    <table class="service-table">
+                        <thead>
+                            <tr>
+                                <th>Service Category</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Digital Advertising</strong></td>
+                                <td>Social media marketing, search engine marketing, display advertising, email marketing, content marketing</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Traditional Media</strong></td>
+                                <td>Television, radio, print, outdoor advertising, direct mail campaigns</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Marketing Strategy</strong></td>
+                                <td>Market research, competitive analysis, brand strategy, campaign planning</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Creative Development</strong></td>
+                                <td>Graphic design, copywriting, video production, photography, content creation</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Analytics & Reporting</strong></td>
+                                <td>Performance tracking, ROI analysis, campaign optimization, data analytics</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Social Media Management</strong></td>
+                                <td>Platform management, community engagement, influencer marketing, content scheduling</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <h4>2.1 Service Agreements</h4>
+                    <p>Specific service terms, deliverables, timelines, and pricing will be detailed in separate service agreements or statements of work ("Service Agreements"). In the event of any conflict between these Terms and a Service Agreement, the Service Agreement shall control.</p>
+                    
+                    <h4>2.2 Service Limitations</h4>
+                    <p>We reserve the right to:</p>
                     <ul>
-                        <li>Provide accurate and complete information about your business and advertising needs</li>
-                        <li>Comply with all applicable laws and regulations</li>
-                        <li>Not use our services for any illegal or unauthorized purpose</li>
-                        <li>Not interfere with or disrupt our services or servers</li>
-                        <li>Not attempt to gain unauthorized access to our systems</li>
-                        <li>Not post inappropriate content when engaging with our social media platforms</li>
-                        <li>Provide timely feedback and approvals during project execution</li>
-                        <li>Make payments according to agreed-upon terms</li>
+                        <li>Modify or discontinue any service at any time</li>
+                        <li>Refuse service to anyone for any reason at any time</li>
+                        <li>Limit the quantities of any services that we offer</li>
+                        <li>Change pricing for our services at any time</li>
+                    </ul>
+                </div>
+
+                <!-- User Accounts -->
+                <div class="policy-section" id="accounts">
+                    <h3>3. User Accounts</h3>
+                    
+                    <p>When you create an account with us, you must provide information that is accurate, complete, and current at all times. Failure to do so constitutes a breach of the Terms, which may result in immediate termination of your account on our Site.</p>
+                    
+                    <h4>3.1 Account Security</h4>
+                    <p>You are responsible for safeguarding the password that you use to access the Site and for any activities or actions under your password. You agree not to disclose your password to any third party. You must notify us immediately upon becoming aware of any breach of security or unauthorized use of your account.</p>
+                    
+                    <h4>3.2 Account Termination</h4>
+                    <p>We reserve the right to suspend or terminate your account at any time for any reason, including but not limited to:</p>
+                    <ul>
+                        <li>Violation of these Terms</li>
+                        <li>Providing false or misleading information</li>
+                        <li>Unauthorized use of the Site</li>
+                        <li>Non-payment of fees</li>
+                        <li>Engaging in illegal or fraudulent activities</li>
+                    </ul>
+                </div>
+
+                <!-- Payments & Billing -->
+                <div class="policy-section" id="payments">
+                    <h3>4. Payments and Billing</h3>
+                    
+                    <h4>4.1 Payment Terms</h4>
+                    <p>All payments for our services are due according to the terms specified in the applicable Service Agreement. General payment terms include:</p>
+                    
+                    <table class="info-table">
+                        <thead>
+                            <tr>
+                                <th>Term</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Invoices</strong></td>
+                                <td>Due within 30 days of receipt unless otherwise specified</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Late Payments</strong></td>
+                                <td>Subject to interest charges at 1.5% per month or maximum allowed by law</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Currency</strong></td>
+                                <td>All prices are in US dollars unless otherwise specified</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Taxes</strong></td>
+                                <td>Client is responsible for all applicable taxes</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Payment Methods</strong></td>
+                                <td>Credit card, bank transfer, or other agreed-upon methods</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <h4>4.2 Pricing Changes</h4>
+                    <p>We reserve the right to change our prices at any time. Price changes will be communicated to existing clients with reasonable notice.</p>
+                    
+                    <h4>4.3 Refund Policy</h4>
+                    <p>Refunds are handled on a case-by-case basis and are subject to the terms specified in the Service Agreement. Generally:</p>
+                    <ul>
+                        <li>Retainers and deposits may be non-refundable</li>
+                        <li>Completed work is non-refundable</li>
+                        <li>Refunds for cancelled services may be prorated</li>
                     </ul>
                 </div>
 
                 <!-- Intellectual Property -->
-                <div class="policy-section">
-                    <h3>3. Intellectual Property</h3>
-                    <h4>Website Content</h4>
-                    <p>All content on our website, including text, graphics, logos, images, and software, is the property of RG Advertising LLC and is protected by copyright, trademark, and other intellectual property laws.</p>
+                <div class="policy-section" id="intellectual">
+                    <h3>5. Intellectual Property</h3>
                     
-                    <h4>Client Work</h4>
-                    <p>Any creative work produced for clients (including designs, copy, strategies, and campaigns) remains the property of the client upon full payment, unless otherwise specified in a separate agreement. We retain the right to showcase completed work in our portfolio unless otherwise agreed.</p>
+                    <h4>5.1 Our Intellectual Property</h4>
+                    <p>The Site and its original content, features, and functionality are and will remain the exclusive property of RG Advertising LLC and its licensors. The Site is protected by copyright, trademark, and other laws of both the United States and foreign countries.</p>
                     
-                    <h4>License to Use</h4>
-                    <p>We grant you a limited, non-exclusive, non-transferable license to access and use our website for personal or business purposes. This license does not include any resale or commercial use of the website or its contents.</p>
-                </div>
-
-                <!-- Payments and Billing -->
-                <div class="policy-section">
-                    <h3>4. Payments and Billing</h3>
-                    <p>Payment terms will be specified in individual service agreements. General terms include:</p>
+                    <p>Our trademarks and trade dress may not be used in connection with any product or service without the prior written consent of RG Advertising LLC.</p>
+                    
+                    <h4>5.2 Client Content</h4>
+                    <p>You retain all intellectual property rights in any content, materials, or information you provide to us ("Client Content"). By providing Client Content, you grant us a non-exclusive, worldwide, royalty-free license to use, reproduce, modify, and display such content solely for the purpose of providing our services to you.</p>
+                    
+                    <h4>5.3 Work Product</h4>
+                    <p>Upon full payment of all fees, any creative work produced for you ("Work Product") becomes your property, subject to the following:</p>
                     <ul>
-                        <li>Invoices are due within 30 days of receipt unless otherwise specified</li>
-                        <li>Late payments may incur interest charges at 1.5% per month or the maximum rate allowed by law</li>
-                        <li>We reserve the right to suspend services for non-payment</li>
-                        <li>All prices are in US dollars unless otherwise specified</li>
-                        <li>Client is responsible for any taxes associated with services</li>
-                        <li>Retainers and deposits may be required for certain projects</li>
+                        <li>We retain the right to display Work Product in our portfolio</li>
+                        <li>We may retain copies for archival and legal purposes</li>
+                        <li>Third-party materials used in Work Product may have separate licenses</li>
                     </ul>
                 </div>
 
-                <!-- Confidentiality -->
-                <div class="policy-section">
-                    <h3>5. Confidentiality</h3>
-                    <p>Both parties agree to maintain the confidentiality of any proprietary information shared during the course of our business relationship. This includes:</p>
+                <!-- User Conduct -->
+                <div class="policy-section" id="conduct">
+                    <h3>6. User Conduct</h3>
+                    
+                    <p>You agree not to use the Site or our services to:</p>
                     <ul>
-                        <li>Business strategies and plans</li>
-                        <li>Financial information</li>
-                        <li>Marketing data and analytics</li>
-                        <li>Client lists and customer information</li>
-                        <li>Trade secrets and proprietary processes</li>
+                        <li>Violate any applicable laws or regulations</li>
+                        <li>Infringe upon the intellectual property rights of others</li>
+                        <li>Harass, abuse, or harm another person</li>
+                        <li>Submit false or misleading information</li>
+                        <li>Upload or transmit viruses or any other type of malicious code</li>
+                        <li>Collect or track the personal information of others</li>
+                        <li>Spam, phish, or engage in any other unethical marketing practices</li>
+                        <li>Interfere with or circumvent the security features of the Site</li>
                     </ul>
-                    <p>Confidentiality obligations survive termination of our business relationship.</p>
+                    
+                    <h4>6.1 Social Media Conduct</h4>
+                    <p>When engaging with our social media accounts (including TikTok @rangbunrung3), you agree to:</p>
+                    <ul>
+                        <li>Respect other users and their opinions</li>
+                        <li>Avoid posting inappropriate or offensive content</li>
+                        <li>Not engage in spam or repetitive posting</li>
+                        <li>Comply with the terms of service of each social media platform</li>
+                    </ul>
                 </div>
 
                 <!-- Limitation of Liability -->
-                <div class="policy-section">
-                    <h3>6. Limitation of Liability</h3>
-                    <p>RG Advertising LLC shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including but not limited to loss of profits, data, use, goodwill, or other intangible losses, resulting from:</p>
+                <div class="policy-section" id="liability">
+                    <h3>7. Limitation of Liability</h3>
+                    
+                    <div class="warning-box">
+                        <p><strong>Important Limitation:</strong> To the maximum extent permitted by applicable law, in no event shall RG Advertising LLC, its directors, employees, partners, agents, suppliers, or affiliates, be liable for any indirect, incidental, special, consequential, or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from:</p>
+                    </div>
+                    
                     <ul>
-                        <li>Your access to or use of or inability to access or use the services</li>
-                        <li>Any conduct or content of any third party on the services</li>
-                        <li>Any content obtained from the services</li>
+                        <li>Your access to or use of or inability to access or use the Site</li>
+                        <li>Any conduct or content of any third party on the Site</li>
+                        <li>Any content obtained from the Site</li>
                         <li>Unauthorized access, use, or alteration of your transmissions or content</li>
+                        <li>Errors, mistakes, or inaccuracies of content</li>
+                        <li>Personal injury or property damage resulting from your use of the Site</li>
                     </ul>
+                    
+                    <h4>7.1 Cap on Liability</h4>
                     <p>Our total liability for any claim arising from these Terms shall not exceed the amount paid by you for the specific services in question during the six (6) months preceding the claim.</p>
+                    
+                    <h4>7.2 No Guarantee of Results</h4>
+                    <p>While we strive to deliver effective advertising services, we cannot guarantee specific results, including but not limited to:</p>
+                    <ul>
+                        <li>Specific sales or revenue increases</li>
+                        <li>Particular engagement metrics</li>
+                        <li>Exact return on investment (ROI)</li>
+                        <li>Market share increases</li>
+                    </ul>
                 </div>
 
                 <!-- Indemnification -->
-                <div class="policy-section">
-                    <h3>7. Indemnification</h3>
-                    <p>You agree to defend, indemnify, and hold harmless RG Advertising LLC, its officers, directors, employees, and agents from and against any claims, liabilities, damages, losses, and expenses, including without limitation reasonable attorney's fees and costs, arising out of or in any way connected with:</p>
+                <div class="policy-section" id="indemnification">
+                    <h3>8. Indemnification</h3>
+                    
+                    <p>You agree to defend, indemnify, and hold harmless RG Advertising LLC and its licensee and licensors, and their employees, contractors, agents, officers, and directors, from and against any and all claims, damages, obligations, losses, liabilities, costs or debt, and expenses (including but not limited to attorney's fees), resulting from or arising out of:</p>
+                    
                     <ul>
-                        <li>Your access to or use of our services</li>
+                        <li>Your use and access of the Site or our services</li>
                         <li>Your violation of these Terms</li>
-                        <li>Your violation of any third-party right, including without limitation any intellectual property right or privacy right</li>
-                        <li>Any content you provide through our services</li>
+                        <li>Your violation of any third-party right, including without limitation any copyright, property, or privacy right</li>
+                        <li>Any claim that your content caused damage to a third party</li>
+                        <li>Your conduct in connection with the Site or our services</li>
                     </ul>
+                    
+                    <p>This indemnification obligation will survive these Terms and your use of the Site.</p>
                 </div>
 
                 <!-- Termination -->
-                <div class="policy-section">
-                    <h3>8. Termination</h3>
-                    <p>We may terminate or suspend your access to our services immediately, without prior notice or liability, for any reason whatsoever, including without limitation if you breach the Terms.</p>
-                    <p>Upon termination, your right to use the services will immediately cease. All provisions of the Terms which by their nature should survive termination shall survive termination, including, without limitation, ownership provisions, warranty disclaimers, indemnity, and limitations of liability.</p>
+                <div class="policy-section" id="termination">
+                    <h3>9. Termination</h3>
+                    
+                    <p>We may terminate or suspend your account and bar access to the Site immediately, without prior notice or liability, under our sole discretion, for any reason whatsoever and without limitation, including but not limited to a breach of the Terms.</p>
+                    
+                    <h4>9.1 Effect of Termination</h4>
+                    <p>Upon termination, your right to use the Site will immediately cease. If you wish to terminate your account, you may simply discontinue using the Site.</p>
+                    
+                    <h4>9.2 Survival</h4>
+                    <p>All provisions of the Terms which by their nature should survive termination shall survive termination, including, without limitation, ownership provisions, warranty disclaimers, indemnity, and limitations of liability.</p>
                 </div>
 
                 <!-- Dispute Resolution -->
-                <div class="policy-section">
-                    <h3>9. Dispute Resolution</h3>
-                    <h4>Negotiation</h4>
-                    <p>Any disputes arising from these Terms shall first be resolved through good faith negotiations between the parties.</p>
+                <div class="policy-section" id="disputes">
+                    <h3>10. Dispute Resolution</h3>
                     
-                    <h4>Mediation</h4>
-                    <p>If negotiations fail, the parties agree to attempt mediation through a mutually agreed-upon mediator in Ventura County, California.</p>
+                    <h4>10.1 Informal Resolution</h4>
+                    <p>We strongly encourage you to contact us first if you have any concerns about our services. Most concerns can be resolved quickly and satisfactorily through informal negotiation.</p>
                     
-                    <h4>Arbitration</h4>
-                    <p>If mediation is unsuccessful, disputes shall be resolved through binding arbitration in Ventura County, California, in accordance with the rules of the American Arbitration Association. Judgment on the award rendered by the arbitrator(s) may be entered in any court having jurisdiction thereof.</p>
+                    <h4>10.2 Mediation</h4>
+                    <p>If informal resolution fails, both parties agree to attempt mediation through a mutually agreed-upon mediator in Ventura County, California, before pursuing other dispute resolution options.</p>
+                    
+                    <h4>10.3 Arbitration</h4>
+                    <p>Any dispute arising from or relating to these Terms shall be finally settled by binding arbitration in Ventura County, California, in accordance with the rules of the American Arbitration Association. Judgment on the award rendered by the arbitrator(s) may be entered in any court having jurisdiction thereof.</p>
+                    
+                    <h4>10.4 Class Action Waiver</h4>
+                    <p>You agree that any dispute resolution proceedings will be conducted only on an individual basis and not in a class, consolidated, or representative action.</p>
                 </div>
 
                 <!-- Governing Law -->
-                <div class="policy-section">
-                    <h3>10. Governing Law</h3>
-                    <p>These Terms shall be governed by and construed in accordance with the laws of the State of California, without regard to its conflict of law provisions.</p>
-                    <p>Our failure to enforce any right or provision of these Terms will not be considered a waiver of those rights.</p>
+                <div class="policy-section" id="governing">
+                    <h3>11. Governing Law</h3>
+                    
+                    <p>These Terms shall be governed and construed in accordance with the laws of the State of California, without regard to its conflict of law provisions.</p>
+                    
+                    <h4>11.1 Jurisdiction</h4>
+                    <p>You agree that any legal action or proceeding arising from these Terms shall be brought exclusively in the federal or state courts located in Ventura County, California, and you hereby consent to the personal jurisdiction of such courts.</p>
+                    
+                    <h4>11.2 Severability</h4>
+                    <p>If any provision of these Terms is held to be invalid or unenforceable by a court, the remaining provisions of these Terms will remain in effect.</p>
                 </div>
 
                 <!-- Changes to Terms -->
-                <div class="policy-section">
-                    <h3>11. Changes to Terms</h3>
+                <div class="policy-section" id="changes">
+                    <h3>12. Changes to These Terms</h3>
+                    
                     <p>We reserve the right, at our sole discretion, to modify or replace these Terms at any time. If a revision is material, we will provide at least 30 days' notice prior to any new terms taking effect. What constitutes a material change will be determined at our sole discretion.</p>
-                    <p>By continuing to access or use our services after those revisions become effective, you agree to be bound by the revised terms.</p>
+                    
+                    <p>By continuing to access or use our Site after those revisions become effective, you agree to be bound by the revised terms.</p>
                 </div>
 
                 <!-- Contact Information -->
-                <div class="policy-section">
-                    <h3>12. Contact Information</h3>
-                    <p>For questions about these Terms of Service, please contact:</p>
+                <div class="policy-section" id="contact">
+                    <h3>13. Contact Information</h3>
+                    
+                    <p>For questions about these Terms of Service, please contact us:</p>
                     
                     <div class="highlight-box">
                         <p><strong>RG Advertising LLC</strong><br>
@@ -253,18 +612,17 @@
                     <p>For general inquiries, please use our contact form at <a href="contact.html">rg-advertising.site/contact.html</a></p>
                 </div>
 
-                <!-- Acknowledgement -->
-                <div class="policy-section">
-                    <div class="highlight-box">
-                        <p><strong>By using our website or services, you acknowledge that you have read, understood, and agree to be bound by these Terms of Service.</strong></p>
-                        <p>If you are entering into these Terms on behalf of a company or other legal entity, you represent that you have the authority to bind such entity to these Terms.</p>
-                    </div>
+                <!-- Acceptance -->
+                <div class="acceptance-box">
+                    <h4>Acceptance of Terms</h4>
+                    <p>By using our website or services, you acknowledge that you have read, understood, and agree to be bound by these Terms of Service.</p>
+                    <p><strong>If you are entering into these Terms on behalf of a company or other legal entity, you represent that you have the authority to bind such entity to these Terms.</strong></p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer (Same as index.html) -->
+    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-content">
@@ -335,6 +693,55 @@
             link.addEventListener('click', () => {
                 navMenu.classList.remove('active');
                 mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+        
+        // Smooth scrolling for policy navigation
+        document.querySelectorAll('.policy-navigation a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Remove active class from all links
+                document.querySelectorAll('.policy-navigation a').forEach(l => {
+                    l.classList.remove('active');
+                });
+                
+                // Add active class to clicked link
+                this.classList.add('active');
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 120,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Set active link based on scroll position
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('.policy-section');
+            const navLinks = document.querySelectorAll('.policy-navigation a');
+            
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                
+                if (window.scrollY >= (sectionTop - 150)) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
             });
         });
         
