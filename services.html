@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services | RG Advertising LLC</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta name="description" content="Complete advertising services from RG Advertising LLC including digital marketing, traditional media, strategy, creative development, and analytics.">
+    <style>
+        /* Copy all CSS styles from index.html */
+        /* Then add: */
+        .page-hero {
+            background: linear-gradient(rgba(26, 54, 93, 0.9), rgba(26, 54, 93, 0.9)), url('https://images.unsplash.com/photo-1460467820054-c87ab43e9b59?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 140px 0 80px;
+            text-align: center;
+            margin-top: 80px;
+        }
+
+        .page-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+
+        .page-hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        .service-detail {
+            margin-bottom: 60px;
+            padding: 40px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .service-detail h3 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+
+        .service-features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .service-feature {
+            background: var(--light-gray);
+            padding: 25px;
+            border-radius: 6px;
+            border-left: 4px solid var(--accent);
+        }
+
+        .service-feature i {
+            color: var(--accent);
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+
+        .service-feature h4 {
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .pricing-table {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 8px;
+            margin-top: 40px;
+        }
+
+        .pricing-table h4 {
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .process-steps {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .process-step {
+            flex: 1;
+            min-width: 250px;
+            text-align: center;
+            padding: 30px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0 auto 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header (Same as index.html) -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <i class="fas fa-bullhorn logo-icon"></i>
+                <h1>RG Advertising LLC</h1>
+            </div>
+            
+            <div class="social-media">
+                <a href="https://www.tiktok.com/@rangbunrung3" target="_blank" class="social-link tiktok" title="Follow us on TikTok">
+                    <i class="fab fa-tiktok"></i>
+                </a>
+                <a href="#" target="_blank" class="social-link facebook" title="Follow us on Facebook">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a href="#" target="_blank" class="social-link instagram" title="Follow us on Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav>
+                <ul id="navMenu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html" class="active">Services</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <h1>Our Advertising Services</h1>
+            <p>Comprehensive advertising solutions tailored to help your business grow and succeed in today's competitive market.</p>
+        </div>
+    </section>
+
+    <!-- Services Content -->
+    <section class="content-section">
+        <div class="container">
+            <!-- Digital Advertising -->
+            <div class="service-detail" id="digital">
+                <div class="service-icon" style="width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+                    <i class="fas fa-digital-tachograph" style="color: white; font-size: 2rem;"></i>
+                </div>
+                <h3>Digital Advertising</h3>
+                <p>Comprehensive digital marketing strategies that leverage the latest technology and platforms to connect your brand with customers online. We create data-driven campaigns that deliver measurable results across all digital channels.</p>
+                
+                <div class="service-features-grid">
+                    <div class="service-feature">
+                        <i class="fas fa-hashtag"></i>
+                        <h4>Social Media Advertising</h4>
+                        <p>Targeted campaigns on TikTok, Facebook, Instagram, LinkedIn, and Twitter to engage specific audiences.</p>
+                    </div>
+                    <div class="service-feature">
+                        <i class="fas fa-search"></i>
+                        <h4>Search Engine Marketing</h4>
+                        <p>PPC campaigns on Google Ads and Bing Ads that capture high-intent users actively searching for your products.</p>
+                    </div>
+                    <div class="service-feature">
+                        <i class="fas fa-desktop"></i>
+                        <h4>Display Advertising</h4>
+                        <p>Visual banner ads across websites and apps to build brand awareness and retarget website visitors.</p>
+                    </div>
+                    <div class="service-feature">
+                        <i class="fas fa-video"></i>
+                        <h4>Video Advertising</h4>
+                        <p>Engaging video content on YouTube, TikTok, and social media platforms to tell your brand story.</p>
+                    </div>
+                </div>
+                
+                <div class="pricing-table">
+                    <h4>Service Packages</h4>
+                    <p><strong>Starter Package:</strong> Basic social media management and Google Ads - Starting at $1,500/month</p>
+                    <p><strong>Growth Package:</strong> Comprehensive digital strategy including social, search, and display - Starting at $3,000/month</p>
+                    <p><strong>Enterprise Package:</strong> Full-service digital marketing with dedicated team - Custom pricing</p>
+                </div>
+            </div>
+
+            <!-- Traditional Media -->
+            <div class="service-detail" id="traditional">
+                <div class="service-icon" style="width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+                    <i class="fas fa-tv" style="color: white; font-size: 2rem;"></i>
+                </div>
+                <h3>Traditional Media Advertising</h3>
+                <p>While digital channels grow, traditional media remains powerful for building brand authority and reaching specific demographics. We craft compelling traditional campaigns that complement your digital strategy.</p>
+                
+                <div class="service-features-grid">
+                    <div class="service-feature">
+                        <i class="fas fa-tv"></i>
+                        <h4>Television Commercials</h4>
+                        <p>From concept to production and placement, we create TV spots that resonate with your target audience.</p>
+                    </div>
+                    <div class="service-feature">
+                        <i class="fas fa-broadcast-tower"></i>
+                        <h4>Radio Advertising</h4>
+                        <p>Audio campaigns that connect with listeners during drive times, specific programs, and events.</p>
+                    </div>
+                    <div class="service-feature">
+                        <i class="fas fa-newspaper"></i>
+                        <h4>Print Media</h4>
+                        <p>Newspaper, magazine, and direct mail campaigns targeted to specific geographic or interest-based audiences.</p>
+                    </div>
+                    <div class="service-feature">
+                        <i class="fas fa-sign"></i>
+                        <h4>Outdoor Advertising</h4>
+                        <p>Billboards, transit ads, and other outdoor media placements for maximum visibility in key locations.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Marketing Strategy -->
+            <div class="service-detail" id="strategy">
+                <div class="service-icon" style="width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+                    <i class="fas fa-chart-line" style="color: white; font-size: 2rem;"></i>
+                </div>
+                <h3>Marketing Strategy & Planning</h3>
+                <p>Data-driven marketing plans and market analysis to identify opportunities and create effective advertising roadmaps. We help you define your target audience, set measurable goals, and develop strategies to achieve them.</p>
+                
+                <div class="process-steps">
+                    <div class="process-step">
+                        <div class="step-number">1</div>
+                        <h4>Research & Analysis</h4>
+                        <p>Market research, competitor analysis, and audience insights</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">2</div>
+                        <h4>Strategy Development</h4>
+                        <p>Custom marketing strategy tailored to your business goals</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">3</div>
+                        <h4>Implementation</h4>
+                        <p>Execution of campaigns across selected channels</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">4</div>
+                        <h4>Optimization</h4>
+                        <p>Continuous monitoring and improvement of campaigns</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Additional Services -->
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-pencil-alt"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Creative Development</h3>
+                        <p>Compelling copywriting, graphic design, and multimedia content that captures attention and communicates your message effectively.</p>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Targeted Campaigns</h3>
+                        <p>Audience segmentation and precision targeting to ensure your advertising reaches the right people at the right time.</p>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-analytics"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Analytics & Reporting</h3>
+                        <p>Comprehensive performance tracking and ROI analysis to measure success and optimize ongoing campaigns.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA -->
+            <div style="text-align: center; margin-top: 60px;">
+                <h3 style="color: var(--primary); margin-bottom: 20px;">Ready to Get Started?</h3>
+                <p style="max-width: 600px; margin: 0 auto 30px;">Contact us for a free consultation and customized proposal for your business.</p>
+                <a href="contact.html" class="btn">Request Free Consultation</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (Same as index.html) -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>RG Advertising LLC</h3>
+                    <p>Professional advertising solutions that drive growth and maximize ROI for businesses nationwide.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> 2945 Townsgate Rd, Westlake Village, CA 91361</p>
+                    <p><i class="fas fa-phone"></i> (862) 215-9564</p>
+                    <p><i class="fas fa-envelope"></i> info@rg-advertising.site</p>
+                </div>
+                <div class="footer-social">
+                    <h4>Follow Us</h4>
+                    <div class="footer-social-links">
+                        <a href="https://www.tiktok.com/@rangbunrung3" target="_blank" title="Follow us on TikTok">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                        <a href="#" target="_blank" title="Follow us on Facebook">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="#" target="_blank" title="Follow us on Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" target="_blank" title="Follow us on LinkedIn">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="legal-links">
+                <a href="privacy-policy.html">Privacy Policy</a> | 
+                <a href="terms-of-service.html">Terms of Service</a>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 RG Advertising LLC. All Rights Reserved. | EIN: 41-3040077</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navMenu = document.getElementById('navMenu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            mobileMenuBtn.innerHTML = navMenu.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('#navMenu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+        
+        // Set current year in copyright
+        document.addEventListener('DOMContentLoaded', function() {
+            const year = new Date().getFullYear();
+            const copyrightElement = document.querySelector('.copyright p');
+            if (copyrightElement) {
+                copyrightElement.innerHTML = `&copy; ${year} RG Advertising LLC. All Rights Reserved. | EIN: 41-3040077`;
+            }
+        });
+    </script>
+</body>
+</html>
