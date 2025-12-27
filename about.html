@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | RG Advertising LLC</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta name="description" content="Learn about RG Advertising LLC - A professional advertising agency based in California with EIN 41-3040077.">
+    <style>
+        /* Copy all CSS styles from index.html */
+        /* Then add: */
+        .page-hero {
+            background: linear-gradient(rgba(26, 54, 93, 0.9), rgba(26, 54, 93, 0.9)), url('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 140px 0 80px;
+            text-align: center;
+            margin-top: 80px;
+        }
+
+        .page-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+
+        .page-hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        .about-section {
+            margin-bottom: 60px;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .value-card {
+            text-align: center;
+            padding: 40px 30px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .value-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin: 0 auto 20px;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .team-member {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .member-photo {
+            height: 250px;
+            background: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 5rem;
+        }
+
+        .member-info {
+            padding: 30px;
+        }
+
+        .member-info h3 {
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .member-role {
+            color: var(--secondary);
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .legal-docs {
+            background: #f8f9fa;
+            padding: 40px;
+            border-radius: 8px;
+            margin-top: 40px;
+        }
+
+        .legal-docs h3 {
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header (Same as index.html) -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <i class="fas fa-bullhorn logo-icon"></i>
+                <h1>RG Advertising LLC</h1>
+            </div>
+            
+            <div class="social-media">
+                <a href="https://www.tiktok.com/@rangbunrung3" target="_blank" class="social-link tiktok" title="Follow us on TikTok">
+                    <i class="fab fa-tiktok"></i>
+                </a>
+                <a href="#" target="_blank" class="social-link facebook" title="Follow us on Facebook">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a href="#" target="_blank" class="social-link instagram" title="Follow us on Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav>
+                <ul id="navMenu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="about.html" class="active">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <h1>About RG Advertising LLC</h1>
+            <p>Professional advertising agency dedicated to helping businesses grow through strategic marketing solutions.</p>
+        </div>
+    </section>
+
+    <!-- About Content -->
+    <section class="content-section">
+        <div class="container">
+            <!-- Company Story -->
+            <div class="about-section">
+                <div class="section-title">
+                    <h2>Our Story</h2>
+                </div>
+                <div class="about-content">
+                    <div class="about-text">
+                        <h3>Building Brands Since 2025</h3>
+                        <p>RG Advertising LLC was founded with a clear mission: to provide businesses with effective advertising solutions that deliver measurable results. Based in Westlake Village, California, we serve clients nationwide with innovative marketing strategies.</p>
+                        <p>Our team combines years of industry experience with cutting-edge approaches to help clients achieve their marketing goals. We believe in creating partnerships with our clients, working closely to understand their unique needs and objectives.</p>
+                        <p>From small businesses to large corporations, we've helped numerous clients improve their brand visibility, increase customer engagement, and drive sales growth through strategic advertising campaigns.</p>
+                    </div>
+                    <div class="business-info">
+                        <h3>Official Business Details</h3>
+                        <div class="info-item">
+                            <i class="fas fa-building"></i>
+                            <div>
+                                <strong>Legal Name:</strong><br>
+                                RG ADVERTISING LLC
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-id-card"></i>
+                            <div>
+                                <strong>Employer Identification Number:</strong><br>
+                                41-3040077
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <strong>Business Address:</strong><br>
+                                2945 Townsgate Rd<br>
+                                Westlake Village, CA 91361
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <strong>Contact Phone:</strong><br>
+                                (862) 215-9564
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <strong>Email:</strong><br>
+                                info@rg-advertising.site
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <strong>Business Hours:</strong><br>
+                                9:00 AM - 5:00 PM PST, Monday to Friday
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Our Values -->
+            <div class="about-section">
+                <div class="section-title">
+                    <h2>Our Values</h2>
+                </div>
+                <div class="values-grid">
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-bullseye"></i>
+                        </div>
+                        <h3>Results-Driven</h3>
+                        <p>We focus on delivering measurable results and ROI for every campaign we execute.</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <h3>Innovative</h3>
+                        <p>We stay ahead of trends and use the latest technologies to create cutting-edge campaigns.</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <h3>Client-Focused</h3>
+                        <p>Your success is our success. We build lasting partnerships based on trust and transparency.</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>Data-Informed</h3>
+                        <p>We make decisions based on data and analytics to ensure optimal campaign performance.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Our Team -->
+            <div class="about-section">
+                <div class="section-title">
+                    <h2>Our Leadership</h2>
+                </div>
+                <div class="team-grid">
+                    <div class="team-member">
+                        <div class="member-photo">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="member-info">
+                            <h3>Genevieve Dumorne Jr</h3>
+                            <div class="member-role">Managing Member</div>
+                            <p>With over 15 years of advertising and marketing experience, Genevieve leads our team with a focus on strategic growth and client success.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="team-member">
+                        <div class="member-photo">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="member-info">
+                            <h3>Marketing Team</h3>
+                            <div class="member-role">Digital Specialists</div>
+                            <p>Our team of digital marketing experts specializes in social media, SEO, PPC, and content marketing strategies.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="team-member">
+                        <div class="member-photo">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="member-info">
+                            <h3>Creative Team</h3>
+                            <div class="member-role">Design & Content</div>
+                            <p>Our creative professionals develop compelling visual and written content that engages audiences and drives results.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Legal Documents -->
+            <div class="legal-docs">
+                <h3>Business Documentation</h3>
+                <p>RG Advertising LLC is a legally registered business entity in the state of California. We maintain all necessary business licenses and insurance coverage to operate our advertising agency services.</p>
+                <p><strong>EIN Verification:</strong> 41-3040077</p>
+                <p><strong>Business Structure:</strong> Limited Liability Company (LLC)</p>
+                <p><strong>Tax Classification:</strong> Partnership (Form 1065)</p>
+                <p><strong>Year Established:</strong> 2025</p>
+            </div>
+
+            <!-- CTA -->
+            <div style="text-align: center; margin-top: 60px;">
+                <h3 style="color: var(--primary); margin-bottom: 20px;">Ready to Work With Us?</h3>
+                <p style="max-width: 600px; margin: 0 auto 30px;">Contact us today to discuss how we can help your business grow through strategic advertising.</p>
+                <a href="contact.html" class="btn">Contact Our Team</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (Same as index.html) -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>RG Advertising LLC</h3>
+                    <p>Professional advertising solutions that drive growth and maximize ROI for businesses nationwide.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> 2945 Townsgate Rd, Westlake Village, CA 91361</p>
+                    <p><i class="fas fa-phone"></i> (862) 215-9564</p>
+                    <p><i class="fas fa-envelope"></i> info@rg-advertising.site</p>
+                </div>
+                <div class="footer-social">
+                    <h4>Follow Us</h4>
+                    <div class="footer-social-links">
+                        <a href="https://www.tiktok.com/@rangbunrung3" target="_blank" title="Follow us on TikTok">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                        <a href="#" target="_blank" title="Follow us on Facebook">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="#" target="_blank" title="Follow us on Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" target="_blank" title="Follow us on LinkedIn">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="legal-links">
+                <a href="privacy-policy.html">Privacy Policy</a> | 
+                <a href="terms-of-service.html">Terms of Service</a>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 RG Advertising LLC. All Rights Reserved. | EIN: 41-3040077</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navMenu = document.getElementById('navMenu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            mobileMenuBtn.innerHTML = navMenu.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('#navMenu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+        
+        // Set current year in copyright
+        document.addEventListener('DOMContentLoaded', function() {
+            const year = new Date().getFullYear();
+            const copyrightElement = document.querySelector('.copyright p');
+            if (copyrightElement) {
+                copyrightElement.innerHTML = `&copy; ${year} RG Advertising LLC. All Rights Reserved. | EIN: 41-3040077`;
+            }
+        });
+    </script>
+</body>
+</html>
